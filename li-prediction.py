@@ -25,16 +25,16 @@ st.sidebar.header('User Input Features')
 analysis = st.sidebar.selectbox('Select a method',['Decision Tree','Random Forest'])
 
 
-Al = st.sidebar.number_input('Al')
-Si = st.sidebar.number_input('Si')
-Al0Si = st.sidebar.number_input('Al0Si')
-Fe = st.sidebar.number_input('Fe')
+Al = st.sidebar.number_input('Al2O3')
+Si = st.sidebar.number_input('SiO2')
+Al0Si = st.sidebar.number_input('Al2O3/SiO2')
+Fe = st.sidebar.number_input('TFeO')
 
 def user_input_features():
-        data = {'Al':Al,
-                'Si':Si,
-                'Al0Si':Al0Si,
-                'Fe':Fe,
+        data = {'Al2O3':Al,
+                'SiO2':Si,
+                'Al2O3/SiO2':Al0Si,
+                'TFeO':Fe,
                 }
         features = pd.DataFrame(data, index=[0])
         return features
