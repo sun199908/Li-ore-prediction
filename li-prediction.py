@@ -58,7 +58,7 @@ if analysis == 'KNeighbors':
         elif user_result == 3:
             st.write('达到锂矿边界品位')
 else:
-    RF = SVM()
+    RF = SVC()
     RF.fit(X_train, y_train)
     user_result = RF.predict(user_data)
     st.title('')
