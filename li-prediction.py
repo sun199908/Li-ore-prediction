@@ -6,6 +6,8 @@ import pickle
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 
 
@@ -22,7 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random
 
 
 st.sidebar.header('User Input Features')
-analysis = st.sidebar.selectbox('Select a method',['Decision Tree','Random Forest'])
+analysis = st.sidebar.selectbox('Select a method',['KNeighbors','SVM'])
 
 
 Al = st.sidebar.number_input('Al2O3')
@@ -43,8 +45,8 @@ user_data = user_input_features()
 st.subheader('**User Input parameters**')
 st.write(user_data)
 
-if analysis == 'Decision Tree':
-    DT = DecisionTreeClassifier()
+if analysis == 'KNeighbors':
+    DT = KNeighborsClassifier()
     DT.fit(X_train, y_train)
     user_result = DT.predict(user_data)
     st.title('')
@@ -56,7 +58,7 @@ if analysis == 'Decision Tree':
         elif user_result == 3:
             st.write('达到锂矿边界品位')
 else:
-    RF = RandomForestClassifier()
+    RF = SVM()
     RF.fit(X_train, y_train)
     user_result = RF.predict(user_data)
     st.title('')
