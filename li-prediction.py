@@ -17,7 +17,7 @@ st. title("Li ore prediction app")
 st.subheader('This app uses the ***Major element data of bauxite ***')
 st.write('---')
 
-df = pd.read_excel('锂矿大数据二分类2正式-4.xlsx')
+df = pd.read_excel('锂矿大数据二分类2正式-5.xlsx')
 X = df.drop('Li', axis=1)
 y = df['Li']
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state = 0)
